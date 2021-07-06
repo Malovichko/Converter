@@ -1,10 +1,11 @@
 package com.example.networkexample.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.networkexample.R
@@ -21,8 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editCurrencyEnd: EditText
     private lateinit var buttonChangeCurrencyStart: Button
     private lateinit var buttonChangeCurrencyEnd: Button
-    private lateinit var startValute: Valute
-    private lateinit var endValute: Valute
+    private var startValute: Valute? = null
+    private var endValute: Valute? = null
 
 
     private lateinit var sharedViewModel: SharedViewModel
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         var getTextInput: Double
         var getTextOutput: Double
         var convert: Converter
+
         buttonChangeCurrencyStart.setOnClickListener {
             ValuteListFragment.newInstance(getString(R.string.start))
                 .show(supportFragmentManager, ValuteListFragment.KEY_CHOOSE_RECEIVER)
@@ -68,18 +70,49 @@ class MainActivity : AppCompatActivity() {
             })
         }
         editCurrencyStart.setOnClickListener {
-            getTextInput = editCurrencyStart.text.toString().toDouble()
-            convert = Converter(getTextInput, startValute, endValute)
-
-            editCurrencyEnd.setText(convert.convertFromStartValute().toString())
+            try {
+                getTextInput = editCurrencyStart.text.toString().toDouble()
+                if (endValute != null && startValute != null) {
+                    convert = Converter(getTextInput, startValute!!, endValute!!)
+                    editCurrencyEnd.setText(convert.convertFromStartValute().toString())
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.text_message_choose_valute),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } catch (e: NumberFormatException) {
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.text_message_input_number),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
-        editCurrencyEnd.setOnClickListener{
-            getTextOutput = editCurrencyEnd.text.toString().toDouble()
-            convert = Converter(getTextOutput, startValute, endValute)
-
-            editCurrencyStart.setText(convert.convertFromStartValute().toString())
+        editCurrencyEnd.setOnClickListener {
+            try {
+                getTextOutput = editCurrencyEnd.text.toString().toDouble()
+                if (endValute != null && startValute != null) {
+                    convert = Converter(getTextOutput, startValute!!, endValute!!)
+                    editCurrencyStart.setText(convert.convertFromStartValute().toString())
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.text_message_choose_valute),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } catch (e: NumberFormatException) {
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.text_message_input_number),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
+
 
     }
 }
