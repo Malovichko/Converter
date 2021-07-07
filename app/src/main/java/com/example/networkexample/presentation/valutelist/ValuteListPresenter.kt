@@ -11,7 +11,7 @@ class ValuteListPresenter constructor(private val view: ValuteListView) {
 
     fun onViewCreated() {
         view.setProgressVisible(true)
-        retrofitService.getCharacters()
+        retrofitService.getValuteList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map {

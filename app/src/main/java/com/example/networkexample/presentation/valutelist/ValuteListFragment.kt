@@ -72,11 +72,11 @@ class ValuteListFragment : DialogFragment(), ValuteListView {
         val tag = arguments?.getString(KEY_CHOOSE_RECEIVER)
 
         val adapter = ValuteListAdapter(list) {
-            if (tag.equals(getString(R.string.start),true)){
-            viewModel.sendStartCharCode(it)
-            dismiss()
+            if (tag.equals(getString(R.string.start), true)) {
+                viewModel.sendStartCharCode(it)
+                dismiss()
             }
-            if (tag.equals(getString(R.string.end), true)){
+            if (tag.equals(getString(R.string.end), true)) {
                 viewModel.sendEndCharCode(it)
                 dismiss()
             }

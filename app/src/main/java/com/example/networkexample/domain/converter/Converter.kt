@@ -1,6 +1,8 @@
 package com.example.networkexample.domain.converter
 
 import com.example.networkexample.domain.model.Valute
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 
 class Converter constructor(
@@ -17,7 +19,10 @@ class Converter constructor(
     fun convertFromStartValute(): Double {
         val baseA: Double = changePointToDot(startValute.value).toDouble() / startValute.nominal.toDouble()
         val baseB: Double = changePointToDot(endValute.value).toDouble() / endValute.nominal.toDouble()
-        return baseA * inputValute / baseB
+        val value = baseA * inputValute / baseB
+        var result = BigDecimal(value)
+        result = result.setScale(3, RoundingMode.DOWN)
 
+        return result.toDouble()
     }
 }

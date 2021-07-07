@@ -34,8 +34,4 @@ class ValuteViewHolder(rootView: View, private val onClick: (valute: Valute) -> 
             )
         }
     }
-
-//    private fun onClick(valute: Valute) {
-//        imageViewCheckmark.isVisible = true
-//    }
 }
