@@ -5,10 +5,11 @@ import androidx.room.Room
 import com.example.networkexample.data.NetworkServiceHolder
 import com.example.networkexample.data.database.AppDataBase
 import com.example.networkexample.data.database.DataBaseHolder
+import com.example.networkexample.domain.model.Valute
 import okhttp3.OkHttpClient
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 
 class NetworkExampleApp : Application() {

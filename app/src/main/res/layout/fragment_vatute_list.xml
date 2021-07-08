@@ -26,13 +26,14 @@
 
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:indeterminate="true"
         android:visibility="gone"
         tools:visibility="visible"
         android:theme="@style/CircularProgress"
-        android:indeterminateTint="@color/blue"/>
+        android:background="@color/blue"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_character"

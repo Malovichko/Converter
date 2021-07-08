@@ -1,10 +1,13 @@
 package com.example.networkexample.presentation.valutelist
 
+import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.view.*
+import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
@@ -62,11 +65,13 @@ class ValuteListFragment : DialogFragment(), ValuteListView {
         recyclerView = v.findViewById(R.id.recycler_view_character)
         progress = v.findViewById(R.id.progress)
         toolbar = v.findViewById(R.id.toolbar_fragment_valute_list)
-//        presenter.getValutesFromDb()
+        if (!(presenter.isNetworkAvailable(requireContext()))) presenter.getValutesFromDb()
+        else
         presenter.onViewCreated()
         initListener()
         return v
     }
+
 
     private fun initListener() {
         toolbar.setOnMenuItemClickListener {
