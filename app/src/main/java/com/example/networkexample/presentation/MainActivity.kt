@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 getTextInput = editCurrencyStart.text.toString().toDouble()
                 if (endValute != null && startValute != null) {
                     convert = Converter(getTextInput, startValute!!, endValute!!)
-                    editCurrencyEnd.setText(convert.convertFromStartValute().toString())
+                    editCurrencyEnd.setText(convert.convert().toString())
                 } else {
                     Toast.makeText(
                         applicationContext,
@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
                 getTextOutput = editCurrencyEnd.text.toString().toDouble()
                 if (endValute != null && startValute != null) {
                     convert = Converter(getTextOutput, startValute!!, endValute!!)
-                    editCurrencyStart.setText(convert.convertFromStartValute().toString())
+                    editCurrencyStart.setText(convert.convert().toString())
                 } else {
                     Toast.makeText(
                         applicationContext,
@@ -112,7 +112,6 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         }
-
 
     }
 }
