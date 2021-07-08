@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface CBRValutesApiService {
 
     @GET("scripts/XML_daily.asp")
-    fun getValuteList() : Single<ListResponseApiModel>
+    fun getValuteList(): Single<ListResponseApiModel>
 }

@@ -11,7 +11,7 @@ class SharedViewModel : ViewModel() {
         startCharCode.value = text
     }
 
-    fun sendEndCharCode(text: Valute){
+    fun sendEndCharCode(text: Valute) {
         endCharCode.value = text
     }
 }

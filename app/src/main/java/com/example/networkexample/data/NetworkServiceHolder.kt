@@ -6,10 +6,10 @@ class NetworkServiceHolder {
 
     companion object {
         var retrofit: Retrofit? = null
-        set(value) {
-            retrofitService = value!!.create(CBRValutesApiService::class.java)
-            field = value
-        }
+            set(value) {
+                retrofitService = value!!.create(CBRValutesApiService::class.java)
+                field = value
+            }
 
         var retrofitService: CBRValutesApiService? = null
     }

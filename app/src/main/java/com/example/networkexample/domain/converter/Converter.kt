@@ -16,9 +16,11 @@ class Converter constructor(
         return "$firstPart.$lastPart"
     }
 
-    fun convertFromStartValute(): Double {
-        val baseA: Double = changePointToDot(startValute.value).toDouble() / startValute.nominal.toDouble()
-        val baseB: Double = changePointToDot(endValute.value).toDouble() / endValute.nominal.toDouble()
+    fun convert(): Double {
+        val baseA: Double =
+            changePointToDot(startValute.value).toDouble() / startValute.nominal.toDouble()
+        val baseB: Double =
+            changePointToDot(endValute.value).toDouble() / endValute.nominal.toDouble()
         val value = baseA * inputValute / baseB
         var result = BigDecimal(value)
         result = result.setScale(3, RoundingMode.DOWN)

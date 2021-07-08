@@ -1,9 +1,7 @@
 package com.example.networkexample.presentation.valutelist
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
@@ -34,11 +32,12 @@ class ValuteListFragment : DialogFragment(), ValuteListView {
     private lateinit var recyclerView: RecyclerView
     private lateinit var progress: LinearProgressIndicator
     private lateinit var viewModel: SharedViewModel
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private var presenter: ValuteListPresenter = ValuteListPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, R.style.MY_DIALOG)
+        setStyle(STYLE_NORMAL, R.style.CustomDialog)
     }
 
     override fun onStart() {
@@ -59,14 +58,35 @@ class ValuteListFragment : DialogFragment(), ValuteListView {
         val v = inflater.inflate(R.layout.fragment_vatute_list, container, false)
         recyclerView = v.findViewById(R.id.recycler_view_character)
         progress = v.findViewById(R.id.progress)
+        toolbar = v.findViewById(R.id.toolbar_fragment_valute_list)
+//        presenter.getValutesFromDb()
         presenter.onViewCreated()
+        initListener()
         return v
+    }
+
+    private fun initListener() {
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_back -> {
+                    super.dismiss()
+                    return@setOnMenuItemClickListener true
+                }
+            }
+            false
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
     }
+
 
     override fun setupItemList(list: List<Valute>) {
         val tag = arguments?.getString(KEY_CHOOSE_RECEIVER)
@@ -93,4 +113,5 @@ class ValuteListFragment : DialogFragment(), ValuteListView {
     override fun setProgressVisible(isVisible: Boolean) {
         progress.isVisible = isVisible
     }
+
 }

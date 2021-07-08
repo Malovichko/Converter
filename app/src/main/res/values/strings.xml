@@ -13,4 +13,5 @@
     <string name="end">end</string>
     <string name="text_message_choose_valute">Выберите валюту</string>
     <string name="text_message_input_number">Введите число</string>
+    <string name="text_button_back">Отмена</string>
 </resources>

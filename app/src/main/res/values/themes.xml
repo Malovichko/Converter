@@ -3,12 +3,12 @@
     <style name="Theme.CurrencyConverter" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/warm_grey_five</item>
+        <item name="colorPrimary">@color/warm_grey_four</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/greyish_brown</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/warm_grey_two</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
@@ -18,24 +18,42 @@
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="colorOnSecondary">@color/black</item>
     </style>
 
     <style name="ToolbarCustomStyle" parent="@style/Base.TextAppearance.AppCompat.Title">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/warm_grey_four</item>
     </style>
 
     <style name="MainCustomStyle" parent="@style/TextAppearance.AppCompat">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="MY.DIALOG" parent="Theme.MaterialComponents.Light.NoActionBar" >
+    <style name="CustomDialog" parent="Theme.MaterialComponents.Light.NoActionBar" >
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsFloating">false</item>
     </style>
+
+    <style name="AppTextCustomStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTextCustomStyleForButtons" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>

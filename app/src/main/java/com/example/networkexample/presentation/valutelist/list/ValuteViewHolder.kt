@@ -28,7 +28,7 @@ class ValuteViewHolder(rootView: View, private val onClick: (valute: Valute) -> 
         imageViewCheckmark.isVisible = false
 
         itemView.setOnClickListener {
-            imageViewCheckmark.isVisible  = true
+            imageViewCheckmark.isVisible = true
             onClick(
                 valute
             )
