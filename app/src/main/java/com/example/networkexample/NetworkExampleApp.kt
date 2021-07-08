@@ -31,7 +31,8 @@ class NetworkExampleApp : Application() {
     private fun initDataBase() {
         val db = Room.databaseBuilder(
             this, AppDataBase::class.java,
-            "valcurs-db")
+            "valcurs-db"
+        )
             .build()
         DataBaseHolder.database = db
     }

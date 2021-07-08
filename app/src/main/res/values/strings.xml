@@ -1,14 +1,8 @@
 <resources>
     <string name="app_name">Конвертер валют</string>
-
     <string name="list_screen_title">Выбор валют</string>
-    <string name="id_label">ID:</string>
-    <string name="name_label">Name:</string>
     <string name="change_currency">Изменить валюту</string>
     <string name="hint_enter_value">Введите значение</string>
-    <string name="fire">Fire</string>
-    <string name="cancel">Cancel</string>
-    <string name="dialog_fire_missiles">TEST</string>
     <string name="start">start</string>
     <string name="end">end</string>
     <string name="text_message_choose_valute">Выберите валюту</string>

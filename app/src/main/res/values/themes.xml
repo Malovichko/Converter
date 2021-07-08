@@ -20,7 +20,7 @@
         <item name="android:windowBackground">@color/white</item>
     </style>
 
-    <style name="MyCustomTheme" parent="Theme.AppCompat">
+    <style name="ValuteListCustomTheme" parent="Theme.AppCompat">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/warm_grey_four</item>
@@ -41,21 +41,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
-        <item name="android:background">@color/white</item>
-<!--        <item name="android:windowDisablePreview">true</item>-->
-<!--        <item name="android:windowIsTranslucent">false</item>-->
-<!--        <item name="android:windowFullscreen">true</item>-->
-<!--        <item name="android:windowContentOverlay">@null</item>-->
-<!--        <item name="windowActionBar">true</item>-->
-<!--        <item name="windowNoTitle">false</item>-->
-        <item name="android:windowDisablePreview">true</item>
-        
+
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorPrimary">@color/warm_grey_two</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
-
-
+    <style name="CircularProgress" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/blue</item>
+    </style>
 
     <style name="ToolbarCustomStyle" parent="@style/Base.TextAppearance.AppCompat.Title">
         <item name="android:textSize">20sp</item>

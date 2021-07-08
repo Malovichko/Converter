@@ -77,7 +77,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="@dimen/dimen_24"
-        android:src="@drawable/ic_icon__2_"
+        android:src="@drawable/ic_arrow"
         app:layout_constraintEnd_toEndOf="@+id/input_layout_output_currency"
         app:layout_constraintStart_toStartOf="@id/input_layout_original_currency"
         app:layout_constraintTop_toBottomOf="@+id/input_layout_original_currency" />
