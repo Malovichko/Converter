@@ -1,6 +1,9 @@
 package com.example.networkexample.presentation.valutelist
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
