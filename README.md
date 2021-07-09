@@ -1,3 +1,3 @@
 # Converter
  
-![alt text](screenshots/recycler.png "Описание будет тут")
+![alt text](screenshots/recycler.jpg "Описание будет тут")
