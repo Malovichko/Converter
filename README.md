@@ -1,3 +1,4 @@
 # Converter
+## Экран выбора валюты
  
-![alt text](screenshots/recycler.jpg "Описание будет тут")
+![alt text](screenshots/recycler.jpg "")
